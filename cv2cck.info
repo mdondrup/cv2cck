@@ -1,0 +1,8 @@
+; $Id$
+name = Chado CV field
+description = Defines a chado controlled vocabulary field type in CCK.
+dependencies[] = content
+dependencies[] = tripal_cv
+package = CCK
+core = 6.x
+version = 0.1

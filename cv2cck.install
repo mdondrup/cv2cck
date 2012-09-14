@@ -7,8 +7,13 @@
  * Implementation of hook_install().
  */
 function cv2cck_install() {
+
+  // Make sure this module is loaded after CCK Text/Number fields.
+  // See autocomplete_widgets_form_alter().
+  db_query("UPDATE {system} SET weight = 1 WHERE name = 'cv2cck'");
+
   drupal_load('module', 'content');
-  content_notify('install', 'example');
+  content_notify('install', 'cv2cck');
 }
 
 /**
@@ -16,7 +21,7 @@ function cv2cck_install() {
  */
 function cv2cck_uninstall() {
   drupal_load('module', 'content');
-  content_notify('uninstall', 'example');
+  content_notify('uninstall', 'cv2cck');
 }
 
 /**
@@ -26,7 +31,7 @@ function cv2cck_uninstall() {
  */
 function cv2cck_enable() {
   drupal_load('module', 'content');
-  content_notify('enable', 'example');
+  content_notify('enable', 'cv2cck');
 }
 
 /**
@@ -36,5 +41,5 @@ function cv2cck_enable() {
  */
 function cv2cck_disable() {
   drupal_load('module', 'content');
-  content_notify('disable', 'example');
+  content_notify('disable', 'cv2cck');
 }
