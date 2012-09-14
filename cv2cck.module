@@ -24,7 +24,7 @@ function cv2cck_field_info() {
   return array(
     // The machine name of the field, 
     // no more than 32 characters.
-    'example' => array(
+    'cv2cck' => array(
       // The human-readable label of the field that will be 
       // seen in the Manage fields screen.
       'label' => t('Chado CV term'),
@@ -222,8 +222,8 @@ function cv2cck_token_list($type = 'all') {
   if ($type == 'field' || $type == 'all') {
     $tokens = array();
 
-    $tokens['example']['raw']       = t('Raw, unfiltered text');
-    $tokens['example']['formatted'] = t('Formatted and filtered text');
+    $tokens['cv2cck']['raw']       = t('Raw, unfiltered text');
+    $tokens['cv2cck']['formatted'] = t('Formatted and filtered text');
 
     return $tokens;
   }
@@ -276,7 +276,7 @@ function cv2cck_field_formatter_info() {
       'label' => t('Default'),
       // An array of the field types this formatter 
       // can be used on.
-      'field types' => array('example'),
+      'field types' => array('cv2cck'),
       // CONTENT_HANDLE_CORE:   CCK will pass the formatter
       // a single value.
       // CONTENT_HANDLE_MODULE: CCK will pass the formatter
@@ -287,14 +287,14 @@ function cv2cck_field_formatter_info() {
     ),
     'plain' => array(
       'label' => t('Plain text'),
-      'field types' => array('example'),
+      'field types' => array('cv2cck'),
       'multiple values' => CONTENT_HANDLE_CORE,
     ),
   );
 }
 
 /**
- * Theme function for 'default' example field formatter.
+ * Theme function for 'default' 'cv2cck' field formatter.
  * 
  * $element['#item']: the sanitized $delta value for the item,
  * $element['#field_name']: the field name,
@@ -340,7 +340,7 @@ function cv2cck_widget_info() {
       'label' => t('CV widget'),
       // An array of the field types this widget can be 
       // used with.
-      'field types' => array('example'),
+      'field types' => array('cv2cck'),
       // Who will handle multiple values, default is core.
       // 'CONTENT_HANDLE_MODULE' means the module does it.
       // See optionwidgets for an example of a module that 
@@ -486,7 +486,7 @@ function cv2cck_widget(&$form, &$form_state, $field, $items, $delta = 0) {
 
 function cv2cck_menu() {
   $items = array();
-  print "in example menu form\n"; 
+ 
   $items[''] = array(
 				    'title' => '',
 				    'path' => 'my/autocomplete',
